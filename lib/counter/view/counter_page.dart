@@ -1,3 +1,4 @@
+import 'package:domain/domain.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:monorepo_case_study/counter/counter.dart';
@@ -9,7 +10,9 @@ class CounterPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (_) => CounterCubit(),
+      create: (_) => CounterCubit(
+        reportsRepository: throw UnimplementedError(),
+      ),
       child: const CounterView(),
     );
   }
