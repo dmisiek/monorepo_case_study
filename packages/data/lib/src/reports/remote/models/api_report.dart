@@ -6,12 +6,14 @@ part 'api_report.g.dart';
 
 @JsonSerializable()
 class ApiReport {
-  const ApiReport({required this.id, required this.type});
+  const ApiReport({
+    required this.id,
+    required this.type,
+  });
 
-  factory ApiReport.fromJson(Map<String, dynamic> json) =>
-      _$ApiReportFromJson(json);
-
-  Map<String, dynamic> toJson() => _$PersonToJson(this);
+  factory ApiReport.fromJson(Map<String, dynamic> json) {
+    return _$ApiReportFromJson(json);
+  }
 
   final String id;
   final ApiReportType type;
