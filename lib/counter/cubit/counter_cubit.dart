@@ -14,4 +14,17 @@ class CounterCubit extends Cubit<CounterState> {
   void increment() => emit(state.copyWith(count: state.count + 1));
 
   void decrement() => emit(state.copyWith(count: state.count - 1));
+
+  Future<void> testMethod() async {
+    try {
+      await reportsRepository.get('2');
+    }
+    // Note: Dio is not direct dependency of app so we cant catch it!
+    // on DioException {
+    //
+    // }
+    catch (e) {
+      // handle it
+    }
+  }
 }
